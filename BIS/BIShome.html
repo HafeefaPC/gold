@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./BIShome.css">
+    
+    <title>Indian States Dropdown</title>
+ 
+</head>
+<body>
+    <div class="container" >
+       
+    <h1>BUREAU OF INDIAN STANDARDS</h1> 
+    <a href="../Homelogin/Homelogin.html"  class="home-button ">Home</a>  
+   
+
+</div>
+<div class="dropdown">
+    
+
+    <button onclick="toggleDropdown()">SELECT STATE</button>
+    <div id="stateDropdown" class="dropdown-content">
+        
+        <a href="#" onclick="showState('Andhra Pradesh')">Andhra Pradesh</a>
+        <a href="#" onclick="showState('Arunachal Pradesh')">Arunachal Pradesh</a>
+        <a href="#" onclick="showState('Assam')">Assam</a>
+        <a href="#" onclick="showState('Bihar')">Bihar</a>
+        <a href="#" onclick="showState('Chhattisgarh')">Chhattisgarh</a>
+        <a href="#" onclick="showState('Goa')">Goa</a>
+        <a href="#" onclick="showState('Gujarat')">Gujarat</a>
+        <a href="#" onclick="showState('Haryana')">Haryana</a>
+        <a href="#" onclick="showState('Himachal Pradesh')">Himachal Pradesh</a>
+        <a href="#" onclick="showState('Jharkhand')">Jharkhand</a>
+        <a href="#" onclick="showState('Karnataka')">Karnataka</a>
+        <a href="#" onclick="showState('Kerala')">Kerala</a>
+        <a href="#" onclick="showState('Madhya Pradesh')">Madhya Pradesh</a>
+        <a href="#" onclick="showState('Maharashtra')">Maharashtra</a>
+        <a href="#" onclick="showState('Manipur')">Manipur</a>
+        <a href="#" onclick="showState('Meghalaya')">Meghalaya</a>
+        <a href="#" onclick="showState('Mizoram')">Mizoram</a>
+        <a href="#" onclick="showState('Nagaland')">Nagaland</a>
+        <a href="#" onclick="showState('Odisha')">Odisha</a>
+        <a href="#" onclick="showState('Punjab')">Punjab</a>
+        <a href="#" onclick="showState('Rajasthan')">Rajasthan</a>
+        <a href="#" onclick="showState('Sikkim')">Sikkim</a>
+        <a href="#" onclick="showState('Tamil Nadu')">Tamil Nadu</a>
+        <a href="#" onclick="showState('Telangana')">Telangana</a>
+        <a href="#" onclick="showState('Tripura')">Tripura</a>
+        <a href="#" onclick="showState('Uttar Pradesh')">Uttar Pradesh</a>
+        <a href="#" onclick="showState('Uttarakhand')">Uttarakhand</a>
+        <a href="#" onclick="showState('West Bengal')">West Bengal</a>
+        
+    </div>
+    <a href="owner.html"><button type="submit" onclick=""><span>FIND OWNER</span></button></a>
+    <a href="huidlisting.html"><button type="submit" onclick=""><span>HUID LISTING</span></button></a>
+</div>
+
+
+
+<div id="stateInfoContainer">
+   
+</div>
+
+<script>
+    
+    function toggleDropdown() {
+        var dropdown = document.getElementById("stateDropdown");
+        dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+    }
+
+    function showState(stateName) {
+        var stateInfoContainer = document.getElementById("stateInfoContainer");
+        var stateInfoHTML = getStateInfoHTML(stateName); 
+        stateInfoContainer.innerHTML = stateInfoHTML; 
+        toggleDropdown(); 
+    }
+
+    function getStateInfoHTML(stateName) {
+       
+        switch (stateName) {
+            case 'Kerala':
+                return `
+                    <h1>Jewellery Information in ${stateName}</h1>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>JEWELLERY ID</th>
+                                <th>JEWELLERY NAME</th>
+                                <th>DISTRICT</th>
+                                <th>INFO</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>4656459867</td>
+                                <td>ABC JEWELLERY</td>
+                                <td>THIRUVANANTHAPURAM</td>
+                                <td><a href="./view.html"class="view-link">View</a></td>
+                            </tr>
+                            <tr>
+                                <td>9856743234</td>
+                                <td>XYZ JEWELLERY</td>
+                                <td>ERNAKULAM</td>
+                                <td><a href=""class="view-link">View</a></td>
+                            </tr>
+                            <tr>
+                                <td>3567887655</td>
+                                <td>JOHN JEWELLERY</td>
+                                <td>PATHANAMTHITTA</td>
+                                <td><a href=""class="view-link">View</a></td>
+                            </tr>
+                            <tr>
+                                <td>9988776655</td>
+                                <td>BEN JEWELLERY</td>
+                                <td>KOLLAM</td>
+                                <td><a href=""class="view-link">View</a></td>
+                            </tr>
+                            <tr>
+                                <td>2765478967</td>
+                                <td>JACK JEWELLERY</td>
+                                <td>MALAPPURAM</td>
+                                <td><a href=""class="view-link">View</a></td>
+                            </tr>
+                            <tr>
+                                <td>8897676545</td>
+                                <td>KEVIN JEWELLERY</td>
+                                <td>KOZHIKODE</td>
+                                <td><a href=""class="view-link">View</a></td>
+                            </tr>
+                            <tr>
+                                <td>4567384756</td>
+                                <td>DANY JEWELLERY</td>
+                                <td>KOTTAYAM</td>
+                                <td><a href=""class="view-link">View</a></td>
+                            </tr>
+                            
+                             <tr>
+                                <td>3289674586</td>
+                                <td>DAVID JEWELLERY</td>
+                                <td>KANNUR</td>
+                                <td><a href=""class="view-link">View</a></td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                `;
+            
+            default:
+                return `<h1>Jewellery Information in ${stateName}</h1><p>No information available for ${stateName}.</p>`;
+        }
+    }
+</script>
+
+</body>
+</html>
